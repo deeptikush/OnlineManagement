@@ -3,15 +3,13 @@ package com.orderApplication.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import com.orderApplication.Entity.Order;
 import com.orderApplication.Model.OrderRequest;
+import com.orderApplication.exception.OrderAlreadyExistsException;
 import com.orderApplication.repository.OrderRepository;
 import com.orderApplication.service.OrderService;
-import com.orderApplication.exception.OrderAlreadyExists;
 
 import jakarta.persistence.EntityManager;
 
@@ -36,7 +34,7 @@ public class OrderServiceImpl implements OrderService{
 		String orderName = orderRepository.getOrdeNameByQ(order.getOrderName());
 		if(orderName!=null)
 		{
-			throw new OrderAlreadyExists();
+			throw new OrderAlreadyExistsException(false,"order already exists");
 		}
 		/*String sqlQuery= "select order_name from order_table where order_name="+order.getOrderName()+ "";
 		if(sqlQuery!=null)

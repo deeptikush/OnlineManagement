@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ErrorMessage {
+public class ErrorResponse {
 	
 	
 	private boolean status;
 	private String message;
-	private Map<String, String > filedOfErrors ;
+	private List<Map<String, String >> filedOfErrors ;
 	
 	}

@@ -16,7 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 @Data
-public class ApiResponse {
+public class SuccessResponse {
 	
 	
 	private boolean success;
