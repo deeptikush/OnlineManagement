@@ -16,7 +16,7 @@ import com.orderApplication.service.OrderService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/order")
+@RequestMapping(value="/order", produces = "application/json")
 public class OrderController {
 
 	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(OrderController.class);
